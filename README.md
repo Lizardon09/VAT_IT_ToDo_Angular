@@ -1,3 +1,14 @@
+# Application
+
+Simple dynamix ToDo List page where a ToDo item can be added, checked, unchecked or deleted. Changes to the list must reflect dynamically on the site
+
+#Design Choices/Dependencies
+
+- Used service to manage the todo list item flow and recording updates
+- Used observerable for todolist to listen for changes
+- Used index values of todo items as Id's to retrieve, update, and delete items at 0(1) (In general circumstance Ids would already be appended to the todo items retrieved and backend would manage changes)
+- Added custom library to manage component lifetime for auto unsubscribes on component destructions - basic memory leak prevention
+
 # ToDoListApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
