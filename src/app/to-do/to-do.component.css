@@ -5,3 +5,45 @@
 .row {
     justify-content: center;
 }
+
+.to-do-input {
+    outline: 0;
+    border-width: 0 0 2px;
+    width: 100%;
+}
+
+.to-do-input:focus {
+    border-color: black
+}
+
+.to-do-input::placeholder {
+    opacity: 0.2;
+}
+
+.to-do-list-section {
+    padding-top: 5%;
+}
+
+.to-do-list-item, .to-do-list-remaining {
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid;
+    border-color:lightgray;
+    padding: 5px 15px 5px 15px;
+}
+
+.to-do-remove {
+    background-color: white;
+}
+
+.to-do-check {
+    color: teal;
+}
+
+.to-do-check-label {
+    opacity: 0.5;
+}
+
+.to-do-list-remaining {
+    padding: 10px 15px 10px 15px;
+}

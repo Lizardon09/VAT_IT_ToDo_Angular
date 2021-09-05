@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoComponent implements OnInit {
 
+  inputPlaceHolder = "What needs to be done?";
+
   constructor() { }
 
   ngOnInit(): void {
