@@ -35,6 +35,10 @@ export class ToDoComponent implements OnInit, OnDestroy {
     this._componentLifetime.onDestroy();
   }
 
+  updateToDo(item) {
+    if(item)  this._toDoService.updateToDo({name: item.name, done: !item.done})
+  }
+
   itemsLeft() {
     return this.toDoList.filter(todo => !todo.done).length;
   }

@@ -6,7 +6,7 @@
 
         <div class="row to-do-list-item" *ngFor="let item of toDoList">
             <div class="form-check my-auto">
-                <input type="checkbox" class="form-check-input to-do-check" name="" id="" value="checkedValue" [checked]="item.done">
+                <input type="checkbox" class="form-check-input to-do-check" name="" id="" value="checkedValue" [checked]="item.done" (click)="updateToDo(item)">
               <label class="to-do-check-label">{{item.name}}</label>
             </div>
             <button type="button my-auto" class="btn to-do-remove">X</button>

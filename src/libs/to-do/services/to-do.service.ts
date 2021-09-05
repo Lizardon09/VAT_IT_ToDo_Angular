@@ -11,14 +11,22 @@ export class ToDoService {
     {name: "Do some work", done: false}
   ]
 
+  toDoList$ = of(this.toDoList);
+
   constructor() { }
 
   getToDoList(): Observable<ToDo[]> {
-    return of(this.toDoList);
+    return this.toDoList$;
   }
 
   addToDo(item: ToDo) {
     this.toDoList.push(item);
+  }
+
+  updateToDo(item: ToDo) {
+    this.toDoList.find(toDo => {
+      if(toDo.name==item.name)  toDo.done = item.done
+    })
   }
 
 }
