@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToDoService } from 'src/libs/to-do/services/to-do.service';
-import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators/';
 import { ComponentLifetime } from 'src/libs/utils/component-lifetime';
 
@@ -29,10 +28,15 @@ export class ToDoComponent implements OnInit, OnDestroy {
           if(toDoList)  this.toDoList = toDoList;
         }
       );
+      
   }
 
   ngOnDestroy() {
     this._componentLifetime.onDestroy();
+  }
+
+  inputNewToDo(event){
+    if(event.target.value?.trim())  this._toDoService.addToDo({name: event.target.value, done: false});
   }
 
   updateToDo(item) {

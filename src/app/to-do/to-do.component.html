@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="row">
-        <input type="text" class="to-do-input" name="" id="" aria-describedby="helpId" placeholder="{{inputPlaceHolder}}" autofocus>
+        <input type="text" class="to-do-input" name="" id="" aria-describedby="helpId" placeholder="{{inputPlaceHolder}}" autofocus (keyup.enter)="inputNewToDo($event)">
     </div>
     <div class="row to-do-list-section">
 
