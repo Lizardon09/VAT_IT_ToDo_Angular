@@ -1,0 +1,13 @@
+.main-container {
+    max-width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    background-color: grey !important;
+}
+
+h1 {
+    color: white!important;
+    font-weight: 50;
+}
