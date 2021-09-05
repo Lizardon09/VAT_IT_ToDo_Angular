@@ -23,10 +23,12 @@ export class ToDoService {
     this.toDoList.push(item);
   }
 
-  updateToDo(item: ToDo) {
-    this.toDoList.find(toDo => {
-      if(toDo.name==item.name)  toDo.done = item.done
-    })
+  updateToDo(item: ToDo, id: number) {
+    this.toDoList[id] = item;
+  }
+
+  removeToDo(id: number) {
+    this.toDoList.splice(id,1);
   }
 
 }

@@ -18,7 +18,6 @@ export class ToDoComponent implements OnInit, OnDestroy {
   constructor(private _toDoService: ToDoService) { }
 
   ngOnInit(): void {
-
     this._toDoService.getToDoList()
       .pipe(
         takeUntil(this._componentLifetime.isDestroyed$)
@@ -28,7 +27,6 @@ export class ToDoComponent implements OnInit, OnDestroy {
           if(toDoList)  this.toDoList = toDoList;
         }
       );
-      
   }
 
   ngOnDestroy() {
@@ -39,8 +37,12 @@ export class ToDoComponent implements OnInit, OnDestroy {
     if(event.target.value?.trim())  this._toDoService.addToDo({name: event.target.value, done: false});
   }
 
-  updateToDo(item) {
-    if(item)  this._toDoService.updateToDo({name: item.name, done: !item.done})
+  updateToDo(item, index) {
+    if(item && index>=0)  this._toDoService.updateToDo({name: item.name, done: !item.done}, index)
+  }
+
+  removeToDo(index) {
+    if(index>=0) this._toDoService.removeToDo(index);
   }
 
   itemsLeft() {

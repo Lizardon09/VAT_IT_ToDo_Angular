@@ -4,12 +4,12 @@
     </div>
     <div class="row to-do-list-section">
 
-        <div class="row to-do-list-item" *ngFor="let item of toDoList">
+        <div class="row to-do-list-item" *ngFor="let item of toDoList; let i = index">
             <div class="form-check my-auto">
-                <input type="checkbox" class="form-check-input to-do-check" name="" id="" value="checkedValue" [checked]="item.done" (click)="updateToDo(item)">
+                <input type="checkbox" class="form-check-input to-do-check" name="" id="" value="checkedValue" [checked]="item.done" (click)="updateToDo(item,i)">
               <label class="to-do-check-label">{{item.name}}</label>
             </div>
-            <button type="button my-auto" class="btn to-do-remove">X</button>
+            <button type="button my-auto" class="btn to-do-remove" (click)="removeToDo(i)">X</button>
         </div>
         <div class="row to-do-list-remaining">
             <h6 class="my-auto">{{itemsLeft()}} items Left</h6> 
